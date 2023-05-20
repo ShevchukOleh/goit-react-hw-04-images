@@ -32,7 +32,6 @@ const ImageGallery = ({ searchQuery, showModal }) => {
     setStatus('pending')
 
     getImages(searchQuery, 1)
-
   }, [searchQuery]);
   
   useEffect(() => {
@@ -40,10 +39,11 @@ const ImageGallery = ({ searchQuery, showModal }) => {
 
     setStatus('pending')
     getImages(searchQuery, page)
-  }, [page, searchQuery]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
 
   const handlerBtnClick = () => {
-    setPage(prevPage => prevPage + 1)
+    setPage(page + 1)
   };
 
   if (status === 'idle') {
