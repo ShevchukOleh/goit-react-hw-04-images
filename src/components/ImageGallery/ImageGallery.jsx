@@ -40,7 +40,7 @@ const ImageGallery = ({ searchQuery, showModal }) => {
 
     setStatus('pending')
     getImages(searchQuery, page)
-  }, [page]);
+  }, [page, searchQuery]);
 
   const handlerBtnClick = () => {
     setPage(prevPage => prevPage + 1)
